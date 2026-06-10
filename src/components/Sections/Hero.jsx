@@ -2,6 +2,9 @@ import React from 'react';
 import { Star, Clock, Shield, ArrowRight } from 'lucide-react';
 import { useScrollAnimation } from '../../components/hooks/useScrollAnimation';
 
+// Safely import the local asset using relative pathing
+import heroImg from '../../assets/hero.png';
+
 const Hero = () => {
   const { ref, isVisible } = useScrollAnimation();
 
@@ -35,9 +38,7 @@ const Hero = () => {
             }`}
           >
             <div className="space-y-4 sm:space-y-6">
-              <div className="inline-flex items-center ">
-                
-              </div>
+              <div className="inline-flex items-center "></div>
 
               <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-7xl font-display font-bold text-gray-900 leading-tight sm:leading-tight">
                 Delicious
@@ -117,7 +118,7 @@ const Hero = () => {
               {/* Image container (hover only affects image area) */}
               <div className="relative rounded-full overflow-hidden shadow-2xl w-[280px] h-[280px] sm:w-[350px] sm:h-[350px] md:w-[400px] md:h-[400px] lg:w-[450px] lg:h-[450px] xl:w-[500px] xl:h-[500px] cursor-pointer transition-transform duration-500 ease-out hover:scale-105 hover:rotate-1">
                 <img
-                  src="src/assets/hero.png"
+                  src={heroImg}
                   alt="Delicious food"
                   className="w-full h-full object-cover transition-transform duration-700 ease-out hover:scale-110"
                 />
